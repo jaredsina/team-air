@@ -630,13 +630,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   speed: 5
   move:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
+    m_Name: Move
+    m_Type: 1
+    m_ExpectedControlType: Button
     m_Id: 9f13df74-0453-401c-8571-ee94b153fad4
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: 1126f655-1de6-4afe-9480-134da4cf051a
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 4
+    - m_Name: up
+      m_Id: f554577b-1686-44e0-a716-fa2635191179
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 19350dd9-f75e-4dd7-be87-048111dc0374
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: left
+      m_Id: e021893f-d2fe-488c-93d7-45f83b46e6dd
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: right
+      m_Id: d46dd6b2-f430-4033-8887-159e9bc4683e
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
     m_Flags: 0
 --- !u!50 &1473659706
 Rigidbody2D:

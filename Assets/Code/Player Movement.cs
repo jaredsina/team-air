@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     // How fast the player can go
 
     public float speed = 5f;
-
+    private float direction = 0f;
     public InputAction move;
 
     
@@ -24,21 +24,25 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
-/*    void Update()
+    private void OnEnable()
     {
-        // Get Direction from KEYBOARD
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        
-        movement = movement.normalized;
+        move.Enable();
     }
-*/
-    void FixedUpdate()
+    private void OnDisable()
     {
-        // Move The Player
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        move.Disable();
+    }
+
+    void Update()
+    {
+        movement = move.ReadValue<Vector2>();
+    }
+
+    private void FixedUpdate()
+    {
+    rb.linearVelocity = new Vector2(movement.x * speed, movement.y * speed );
     }
 }
+
+
 
