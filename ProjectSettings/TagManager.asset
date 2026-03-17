@@ -56,6 +56,9 @@ TagManager:
   - name: shade
     uniqueID: 807262105
     locked: 0
+  - name: orbdisplay
+    uniqueID: 532187493
+    locked: 0
   m_RenderingLayers:
   - Default
   - Layer 1
