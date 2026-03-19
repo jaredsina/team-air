@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     public Lights[] lights;
     public Button restartButton;
 
-    public float flashDuration = 0.4f;
-    public float delayBetweenFlashes = 0.2f;
+    public float flashDuration = 1f;
+    public float delayBetweenFlashes = 0.05f;
 
     List<int> pattern = new List<int>();
     int playerIndex = 0;
@@ -46,8 +46,8 @@ public class GameManager : MonoBehaviour
         playerIndex = 0;
         inputEnabled = false;
 
-        for (int i = 0; i < 5; i++)
-        {
+        for(int i = 0; i < 7; i++)
+{
             pattern.Add(Random.Range(0, lights.Length));
         }
 
@@ -89,7 +89,6 @@ public class GameManager : MonoBehaviour
                 inputEnabled = false;
                 StartCoroutine(LevelComplete());
             }
-
         }
         else
         {
@@ -136,4 +135,3 @@ public class GameManager : MonoBehaviour
         StartNewRound();
     }
 }
-

@@ -11,7 +11,7 @@ TagManager:
   - actual shapes
   - Water
   - UI
-  - 
+  - background
   - 
   - 
   - 
@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background
+    uniqueID: 1088406619
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
