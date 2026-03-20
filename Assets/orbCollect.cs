@@ -12,6 +12,7 @@ public class orbCollect : MonoBehaviour
     public GameObject brownOrb;
     public GameObject blueOrb;
     public GameObject purpleOrb;
+    public GameObject lock1;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,7 +23,10 @@ public class orbCollect : MonoBehaviour
     // Update is called once per frames
     void Update()
     {
-        if orbsCollected > 7()
+        if (orbsCollected > 7)
+        {
+            Destroy(lock1);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
