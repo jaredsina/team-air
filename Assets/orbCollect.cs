@@ -23,7 +23,7 @@ public class orbCollect : MonoBehaviour
     // Update is called once per frames
     void Update()
     {
-        if (orbsCollected > 7)
+        if (orbsCollected > 6)
         {
             Destroy(lock1);
         }
@@ -88,6 +88,10 @@ public class orbCollect : MonoBehaviour
             sr.sortingLayerName = "orbdisplay";
         }
 
+        if (collision.gameObject.name == "Win")
+        {
+            Debug.Log("You Win!");
+        }
         
         Debug.Log(orbsCollected);
        
