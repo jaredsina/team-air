@@ -17,6 +17,7 @@ public class puzzle_script : MonoBehaviour
     static puzzle_script currentlyDragging;
 
     private start sx;
+    private Vector3 offset;
     void Start()
     {
         objectCollider = GetComponent<Collider2D>();
@@ -27,10 +28,33 @@ public class puzzle_script : MonoBehaviour
         
     }
 
+    void OnMouseDown()
+    {
+        offset = transform.position - GetMouseWorldPosition();
+        isDraggable = true;
+    }
+
+    void OnMouseDrag()
+    {
+        if (isDragging)
+        {
+            transform.position = GetMouseWorldPosition() + offset;
+        }
+    }
+
+    void OnMouseUp()
+    {
+        isDragging = false;
+    }
+
+    private Vector3 GetMouseWorldPosition()
+    {
+        Vector3 
+    }
     // Update is called once per frame 
     
 
-    void dragAndDrop()
+    /*void dragAndDrop()
     {
         Vector3 mousePosition;
         mousePosition = Mouse.current.position.ReadValue();
@@ -40,6 +64,10 @@ public class puzzle_script : MonoBehaviour
         Collider2D hit = Physics2D.OverlapPoint(worldPos2);
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
+<<<<<<< Updated upstream
+=======
+            //Debug.Log("puzzle script hit");
+>>>>>>> Stashed changes
             if (currentlyDragging != null)
             {
                 return;
@@ -67,7 +95,7 @@ public class puzzle_script : MonoBehaviour
             isDraggable = false;
             isDragging = false;
         }
-}
+}*/
     void Update()
     {
         dragAndDrop();
