@@ -25,42 +25,36 @@ public class SquareLogic : MonoBehaviour
     float cellSize = 1f;
     public bool[,] grid;
     public SpriteRenderer[,] gridSprites;
-    LightsOutSolver solver = new LightsOutSolver();
+    //LightsOutSolver solver = new LightsOutSolver();
     public void Start()
     {
         CreateLevel();
-        Debug.Log(PredeterminedLevel[0, 0]);
     }
-    public void CreateLevel()
+    public bool[,] CreateLevel()
     {
         grid = new bool[width, height];
         gridSprites = new SpriteRenderer[width, height];
-        for (int x = 0; x < width; x++)
+        while (LightsOutSolver.IsSolvable(grid) == false)
         {
-            for (int y = 0; y < height; y++)
+            for (int x = 0; x < width; x++)
             {
-                 GameObject square = new GameObject("Square");
-                 SpriteRenderer sr = square.AddComponent<SpriteRenderer>();
-                 sr.sprite = squarePrefab.GetComponent<SpriteRenderer>().sprite;
-                 BoxCollider2D bc = square.AddComponent<BoxCollider2D>();
-                 bc.size = sr.sprite.bounds.size;
-                 // sr.color = Random.value > 0.4f ? offsquare : onsquare;
-                 sr.color = PredeterminedLevel.GetValue(x, y).Equals(true) ? onsquare : offsquare;
-                 gridSprites[x, y] = sr;
-                 grid[x, y] = sr.color == onsquare;
-                 square.transform.position = new Vector3(x * cellSize*1.1f - (width * cellSize * 0.5f) + 0.3f, y * cellSize*1.1f - (height * cellSize * 0.5f) + 0.3f, 0);
+                for (int y = 0; y < height; y++)
+                {
+                    GameObject square = new GameObject("Square");
+                    SpriteRenderer sr = square.AddComponent<SpriteRenderer>();
+                    sr.sprite = squarePrefab.GetComponent<SpriteRenderer>().sprite;
+                    BoxCollider2D bc = square.AddComponent<BoxCollider2D>();
+                    bc.size = sr.sprite.bounds.size;
+                    sr.color = Random.value > 0.4f ? offsquare : onsquare;
+                    // sr.color = PredeterminedLevel.GetValue(x, y).Equals(true) ? onsquare : offsquare;
+                    gridSprites[x, y] = sr;
+                    grid[x, y] = sr.color == onsquare;
+                    square.transform.position = new Vector3(x * cellSize*1.1f - (width * cellSize * 0.5f) + 0.3f, y * cellSize*1.1f - (height * cellSize * 0.5f) + 0.3f, 0);
+                }
             }
         }
-        for (int x = 0; x < width; x++)
-        {
-            for (int y = 0; y < height; y++)
-            {
-                DetectClicks dc = gridSprites[x, y].gameObject.AddComponent<DetectClicks>();
-                dc.Init(this, x, y);
-            }
-        }
+        return grid;
     }
-
     public void ClickSquare(int x, int y)
     {
         Toggle(x, y);
@@ -88,7 +82,7 @@ public class SquareLogic : MonoBehaviour
                 if (grid[x, y]) return false;
             }
         }
-        Debug.Log("You won in " + (countclicks+1) + " clicks!");
+        Debug.Log("You won in " + (countclicks + 1) + " clicks!");
             return true;
         
     }
