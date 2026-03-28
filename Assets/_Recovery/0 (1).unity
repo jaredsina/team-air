@@ -377,37 +377,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &573795336
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 573795337}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &573795337
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573795336}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 226.56378, y: 332.83218, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &577986990
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   NewGame_button: {fileID: 70344370}
-  sl: {fileID: 0}
+  sl: {fileID: 1703232273}
 --- !u!114 &577986993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,7 +781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SquareLogic
   SquaresOff: 0
   squarePrefab: {fileID: 1996923006}
-  square: {fileID: 0}
+  square: {fileID: 1703232275}
   countclicks: 0
   timer: 0
 --- !u!4 &1703232274
@@ -1191,4 +1160,3 @@ SceneRoots:
   - {fileID: 984930210}
   - {fileID: 1099979291}
   - {fileID: 1703232274}
-  - {fileID: 573795337}
