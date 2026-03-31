@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Editor/orbui.uss?fileID=7433441132597879392&amp;guid=1976a01c9bbcc7c45abedae2205849ec&amp;type=3#orbui" />
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:Label text="Orbs:" class="custom-label" />
+        <ui:VisualElement style="flex-grow: 0; background-color: rgb(255, 0, 0); width: 100px; height: 100px; border-top-left-radius: 64px; border-top-right-radius: 64px; border-bottom-right-radius: 64px; border-bottom-left-radius: 64px; flex-shrink: 0;" />
+    </ui:VisualElement>
+</ui:UXML>

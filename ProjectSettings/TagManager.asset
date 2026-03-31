@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -12,6 +12,9 @@ TagManager:
   - Water
   - UI
   - 
+  - orb
+  - Walls
+  - Player
   - 
   - 
   - 
@@ -33,11 +36,29 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - mouse
   m_SortingLayers:
+  - name: Player
+    uniqueID: 1125706751
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: New Layer 1
+    uniqueID: 3575189837
+    locked: 0
+  - name: New Layer 2
+    uniqueID: 1849662059
+    locked: 0
+  - name: New mouse 4
+    uniqueID: 1669834953
+    locked: 0
+  - name: shade
+    uniqueID: 807262105
+    locked: 0
+  - name: orbdisplay
+    uniqueID: 532187493
+    locked: 0
+  m_RenderingLayers:
+  - Default
+  - Layer 1
